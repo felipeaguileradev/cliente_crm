@@ -37,8 +37,13 @@ const Login = ({ history }) => {
       Swal.fire("Login", "Has iniciado Sesión", "success");
       history.push("/");
     } catch (error) {
-      console.log(error);
-      Swal.fire("Hubo un error", error.response.data.mensaje, "error");
+      if (error.response) {
+        // error del usuario, login
+        Swal.fire("Hubo un error", error.response.data.mensaje, "error");
+      } else {
+        // Errors de cors
+        Swal.fire("Hubo un error", "Hubo un error", "error");
+      }
     }
   };
 

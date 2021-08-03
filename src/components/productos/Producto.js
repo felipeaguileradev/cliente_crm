@@ -34,7 +34,7 @@ const Producto = ({ producto }) => {
           <p className="precio">${precio} </p>
           {imagen && (
             <img
-              src={`http://localhost:5000/${imagen}`}
+              src={`${process.env.REACT_APP_BACKEND_URL}/${imagen}`}
               //   width={100}
               //   height={100}
               alt="imagen del producto"

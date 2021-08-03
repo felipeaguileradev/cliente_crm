@@ -107,7 +107,7 @@ const EditarProducto = ({ match, history }) => {
           <label>Imagen:</label>
           {imagen && (
             <img
-              src={`http://localhost:5000/${imagen}`}
+              src={`${process.env.REACT_APP_BACKEND_URL}/${imagen}`}
               alt="imagen producto"
               width={300}
             />
